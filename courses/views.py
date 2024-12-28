@@ -89,7 +89,7 @@ class ContentCreateUpdateView(TemplateResponseMixin, View):
         self.model = self.get_model(model_name)
         if id:
             self.obj = get_object_or_404(self.model, id=id, owner=request.user)
-            return super().dispatch(request, module_id, model_name, id)
+        return super().dispatch(request, module_id, model_name, id)
         
     def get(self, request, module_id, model_name, id=None):
         form = self.get_form(self.model, instance=self.obj)
@@ -104,5 +104,6 @@ class ContentCreateUpdateView(TemplateResponseMixin, View):
             if not id:
                 # Nowa treść.
                 Content.objects.create(module=self.module, item=obj)
-                return redirect('module_content_list', self.module.id)
-            return self.render_to_response({'form': form, 'object': self.obj})
+            return redirect('module_content_list', self.module.id)
+        return self.render_to_response({'form': form, 'object': self.obj})
+    
