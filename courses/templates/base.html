@@ -11,7 +11,12 @@
             <a href="/" class="logo">Educa</a>
             <ul class="menu">
                 {% if request.user.is_authenticated %}
-                    <li><a href="{% url "logout" %}">Wyloguj</a></li>
+                    <li>
+                        <form action="{% url "logout" %}" method="post">
+                            {%csrf_token %}
+                            <button type="submit">Wyloguj</button>
+                        </form>
+                    </li>
                 {% else %}
                     <li><a href="{% url "login" %}">Zaloguj</a></li>
                 {% endif %}
