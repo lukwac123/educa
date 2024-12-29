@@ -73,9 +73,30 @@
         method: 'POST',
         mode: 'same-origin'
     }
+    
     const moduleOrderUrl = '{% url "module_order" %}';
     sortable('#modules', {
         forcePlaceholderSize: true,
         placeholderClass: 'placeholder'
     });
+
+    const contentOrderUrl = '{% url "content_order" %}';
+    sortable('#module-contents', {
+        forcePlaceholderSize: true,
+        placeholderClass: 'placeholder'
+    })[0].addEventListener('sortupdate', function (e) {
+
+        contentOrder = {};
+        var contents = document.querySelectorAll('module-contents div');
+        contents.forEach(function (content, index) {
+            // Aktualizacja indeksu treści
+            contentOrder[content.dataset.id] = index;
+            // Dodaj nową kolejność do opcji żądania https
+            options['body'] = JSON.stringify(contentOrder);
+
+            // Wysyłanie żądania HTTP
+            fetch(contentOrderUrl, options)
+        });
+    });
+
 {% endblock %}
