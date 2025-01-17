@@ -35,7 +35,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # Moje aplikacje
     'courses.apps.CoursesConfig',
-    'students.apps.CoursesConfig',
+    'students.apps.StudentsConfig',
     # Pozostałe aplikacje
     'django.contrib.admin',
     'django.contrib.auth',
