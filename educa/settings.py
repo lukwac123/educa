@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     # Moje aplikacje
     'courses.apps.CoursesConfig',
     'students.apps.StudentsConfig',
+    'embed_video',
     # Pozostałe aplikacje
     'django.contrib.admin',
     'django.contrib.auth',
