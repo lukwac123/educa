@@ -37,11 +37,13 @@ INSTALLED_APPS = [
     # Moje aplikacje
     'courses.apps.CoursesConfig',
     'students.apps.StudentsConfig',
+    'channels',
     'embed_video',
     'debug_toolbar',
     'redisboard',
     'rest_framework',
     'chat',
+    
     # Pozostałe aplikacje
     'django.contrib.admin',
     'django.contrib.auth',
@@ -83,6 +85,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'educa.wsgi.application'
+ASGI_APPLICATION = 'educa.asgi.application'
 
 
 # Database
