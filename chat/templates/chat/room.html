@@ -11,7 +11,11 @@
 {% endblock %}
 
 {% block include_js %}
+    {{ course.id|json_script:"course_id" }}
 {% endblock %}
 
 {% block domready %}
+    const courseId = JSON.parse(document.getElementById('course-id').textContent);
+    const url = 'ws://' + window.location.host + '/';
+    const chatSocket = new WebSocket(url);
 {% endblock %}
