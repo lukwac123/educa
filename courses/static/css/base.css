@@ -62,6 +62,7 @@ h1 {
     font-size:24px;
     color:#fff;
     float:left;
+    padding-top: 25px;
 }
 
 #header a {
@@ -268,7 +269,7 @@ ul#course-modules li:hover {
 }
 
 #chat {
-    top: 64px;
+    top: 130px;
     bottom:0;
     position:fixed;
     width:100%;

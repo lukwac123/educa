@@ -8,21 +8,26 @@
     </head>
     <body>
         <div id="header">
-            <a href="/" class="logo" style="padding-top: 35px;">Educa</a>
+            <a href="/" class="logo">Educa</a>
             <ul class="menu">
                 {% if request.user.is_authenticated %}
                     <li>
                         <form action="{% url "logout" %}" method="post">
                             {%csrf_token %}
-                            <p><input type="submit" value="Wyloguj"></p>
+                            <input type="submit" value="Wyloguj">
                         </form>
                     </li>
                 {% else %}
-                    <li><a href="{% url "login" %}">Zaloguj</a></li>
+                    <li>
+                        <form action="{% url "login" %}" method="post">
+                            {%csrf_token %}
+                            <input type="submit" value="Zaloguj">
+                        </form>
+                    </li>
                 {% endif %}
             </ul>
         </div>
-        <div id="content">
+        <div id="contents">
             {% block content %}
             {% endblock %}
         </div>
