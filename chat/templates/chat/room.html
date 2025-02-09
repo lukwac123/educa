@@ -40,7 +40,7 @@
             // Wysyłanie wiadomości w formacjie JSON.
             chatSocket.send(JSON.stringify({'message': message}));
             // Wyczyszczenie pola tekstowego
-            input.innerHTML = '';
+            input.value = '';
             input.focus();
         }
     });
