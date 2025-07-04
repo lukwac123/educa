@@ -20,6 +20,7 @@ Projekt Educa ilustruje, jak zbudować kompletną platformę e-learningową od p
 |:----------------------------------------|:---------------------------------------------------|
 | 📁 educa/                               | Katalog główny projektu Django                     |
 | ├── 📁 courses/                         | Aplikacja kursów – modele, widoki, formularze      |
+| ├── 📁 chat/                            | Aplikacja chat - prowadzenie rozmów w czasie rzeczywistym |
 | ├── 📁 students/                        | Aplikacja dla użytkowników/kursantów               |
 | ├── 📁 accounts/                        | Logowanie, rejestracja, zarządzanie kontem         |
 | ├── 📁 templates/                       | Szablony HTML                                      |
@@ -51,7 +52,8 @@ Projekt Educa ilustruje, jak zbudować kompletną platformę e-learningową od p
 | 8          | Zapisy na kursy                                   | Formularze zapisu, dostęp tylko dla zapisanych kursantów, relacje M2M              |
 | 9          | Obsługa mediów                                    | Przesyłanie i wyświetlanie filmów, dokumentów, zdjęć – `MEDIA_URL`, `MEDIA_ROOT`   |
 | 10         | Panel nauczyciela (CMS)                           | Zarządzanie własnymi kursami – CRUD, dynamiczne widoki, filtrowanie danych         |
-| 11         | Deployment (opcjonalny)                           | Przygotowanie do wdrożenia, `gunicorn`, `collectstatic`, plik `Procfile`, hosting  |
+| 11         | Chat w czasie rzeczywistym                        | Django Channels, WebSockety, komunikacja użytkowników w czasie rzeczywistym        |
+| 12         | Deployment (opcjonalny)                           | Przygotowanie do wdrożenia, `gunicorn`, `collectstatic`, plik `Procfile`, hosting  |
 
 ---
 
